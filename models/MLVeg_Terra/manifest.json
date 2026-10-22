@@ -1,0 +1,162 @@
+{
+  "model_id": "MLVeg_Terra",
+  "file": "model_bundle.pkl",
+  "sha256": "3054b0ecd569845d1245dc5ef6db5f1a24a88044c6d0e9c87fd142cff65d1f11",
+  "size_bytes": 2410588,
+  "feature_names": [
+    "LON",
+    "LAT",
+    "DSAT",
+    "DSR",
+    "DLR",
+    "DSOIL",
+    "DVSOIL",
+    "NDWI",
+    "DTR",
+    "DEM",
+    "ELESD",
+    "SLOPE",
+    "modisLST",
+    "modisAngle",
+    "LAI",
+    "EVI",
+    "TH",
+    "GPP"
+  ],
+  "feature_units": {
+    "LON": "degrees_east",
+    "LAT": "degrees_north",
+    "DSAT": "degC",
+    "DSR": "W_m-2",
+    "DLR": "W_m-2",
+    "DSOIL": "degC",
+    "DVSOIL": "m3_m-3",
+    "NDWI": "dimensionless",
+    "DTR": "K_temperature_difference",
+    "DEM": "m",
+    "ELESD": "m",
+    "SLOPE": "degrees",
+    "modisLST": "degC",
+    "modisAngle": "signed_degrees",
+    "LAI": "m2_m-2",
+    "EVI": "dimensionless",
+    "TH": "m",
+    "GPP": "kg_C_m-2"
+  },
+  "temperature_input_unit": "celsius",
+  "target_unit": "K_temperature_difference",
+  "target_definition": "deltaLST = near_nadir_LST - observed_LST",
+  "normalization": "nadir_LST_C = modisLST + deltaLST_K; nadir_LST_K = nadir_LST_C + 273.15",
+  "input_scaler": "MinMaxScaler",
+  "target_scaler": "MinMaxScaler",
+  "model_parameters": {
+    "objective": "regression",
+    "metric": "rmse",
+    "learning_rate": 0.03,
+    "num_leaves": 31,
+    "max_depth": 8,
+    "min_data_in_leaf": 100,
+    "feature_fraction": 0.85,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l1": 0.1,
+    "lambda_l2": 1.0,
+    "seed": 0,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1,
+    "num_iterations": 2000
+  },
+  "num_trees": 2000,
+  "input_training_ranges": {
+    "LON": {
+      "min": -122.68247985839844,
+      "max": 178.35838317871094
+    },
+    "LAT": {
+      "min": -49.69817352294922,
+      "max": 52.02154541015625
+    },
+    "DSAT": {
+      "min": -3.6595399379730225,
+      "max": 38.16299057006836
+    },
+    "DSR": {
+      "min": 244.73532104492188,
+      "max": 1915.797119140625
+    },
+    "DLR": {
+      "min": 223.48158264160156,
+      "max": 2427.752197265625
+    },
+    "DSOIL": {
+      "min": -9.47359561920166,
+      "max": 41.867774963378906
+    },
+    "DVSOIL": {
+      "min": 0.0,
+      "max": 0.6351050734519958
+    },
+    "NDWI": {
+      "min": -0.19947932660579681,
+      "max": 0.3270874619483948
+    },
+    "DTR": {
+      "min": 1.8760936260223389,
+      "max": 43.68455505371094
+    },
+    "DEM": {
+      "min": -27.988004684448242,
+      "max": 5743.99951171875
+    },
+    "ELESD": {
+      "min": 0.06030786782503128,
+      "max": 588.1611938476562
+    },
+    "SLOPE": {
+      "min": 0.0035209390334784985,
+      "max": 34.956058502197266
+    },
+    "modisLST": {
+      "min": -4.18345308303833,
+      "max": 64.24978637695312
+    },
+    "modisAngle": {
+      "min": -60.0,
+      "max": 60.0
+    },
+    "LAI": {
+      "min": 0.00018359099340159446,
+      "max": 5.545496463775635
+    },
+    "EVI": {
+      "min": 2.2600000093575545e-08,
+      "max": 0.740473210811615
+    },
+    "TH": {
+      "min": 0.0,
+      "max": 35.212459564208984
+    },
+    "GPP": {
+      "min": 1.1900000096431995e-08,
+      "max": 0.09630643576383591
+    }
+  },
+  "metadata": {
+    "surface_type": "MLVeg",
+    "sensor_type": "Terra",
+    "area_mc": "GA_lowLAT",
+    "layer": 0,
+    "target_name": "deltaLST",
+    "target_definition": "deltaLST = correctedLST - modisLST",
+    "versions": {
+      "python": "3.13.0",
+      "lightgbm": "4.7.0",
+      "scikit_learn": "1.9.0",
+      "numpy": "2.5.1",
+      "joblib": "1.5.3"
+    },
+    "bundle_version": 1
+  },
+  "scope": "Clear-sky summer daytime; studied natural surfaces. Season is not encoded in the original bundle metadata."
+}

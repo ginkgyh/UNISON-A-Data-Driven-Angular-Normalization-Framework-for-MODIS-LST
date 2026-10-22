@@ -1,0 +1,156 @@
+{
+  "model_id": "MHVeg_Aqua",
+  "file": "model_bundle.pkl",
+  "sha256": "79d442ba4f90442256c58189b35aead5a91e60fdf2c2ea9f83bbea29b024dd6f",
+  "size_bytes": 2387722,
+  "feature_names": [
+    "LON",
+    "LAT",
+    "DSAT",
+    "DSR",
+    "DLR",
+    "DSOIL",
+    "DVSOIL",
+    "DTR",
+    "DEM",
+    "ELESD",
+    "SLOPE",
+    "modisLST",
+    "modisAngle",
+    "LAI",
+    "EVI",
+    "GPP",
+    "NDWI"
+  ],
+  "feature_units": {
+    "LON": "degrees_east",
+    "LAT": "degrees_north",
+    "DSAT": "degC",
+    "DSR": "W_m-2",
+    "DLR": "W_m-2",
+    "DSOIL": "degC",
+    "DVSOIL": "m3_m-3",
+    "DTR": "K_temperature_difference",
+    "DEM": "m",
+    "ELESD": "m",
+    "SLOPE": "degrees",
+    "modisLST": "degC",
+    "modisAngle": "signed_degrees",
+    "LAI": "m2_m-2",
+    "EVI": "dimensionless",
+    "GPP": "kg_C_m-2",
+    "NDWI": "dimensionless"
+  },
+  "temperature_input_unit": "celsius",
+  "target_unit": "K_temperature_difference",
+  "target_definition": "deltaLST = near_nadir_LST - observed_LST",
+  "normalization": "nadir_LST_C = modisLST + deltaLST_K; nadir_LST_K = nadir_LST_C + 273.15",
+  "input_scaler": "MinMaxScaler",
+  "target_scaler": "MinMaxScaler",
+  "model_parameters": {
+    "objective": "regression",
+    "metric": "rmse",
+    "learning_rate": 0.03,
+    "num_leaves": 31,
+    "max_depth": 8,
+    "min_data_in_leaf": 100,
+    "feature_fraction": 0.85,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l1": 0.1,
+    "lambda_l2": 1.0,
+    "seed": 0,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1,
+    "num_iterations": 2000
+  },
+  "num_trees": 2000,
+  "input_training_ranges": {
+    "LON": {
+      "min": -163.6001434326172,
+      "max": 179.4488983154297
+    },
+    "LAT": {
+      "min": 50.11213302612305,
+      "max": 69.94999694824219
+    },
+    "DSAT": {
+      "min": 5.971358299255371,
+      "max": 26.273481369018555
+    },
+    "DSR": {
+      "min": 302.82305908203125,
+      "max": 1709.904296875
+    },
+    "DLR": {
+      "min": 298.93389892578125,
+      "max": 2014.0556640625
+    },
+    "DSOIL": {
+      "min": -1.7271214723587036,
+      "max": 28.28099822998047
+    },
+    "DVSOIL": {
+      "min": 0.0,
+      "max": 0.9802169799804688
+    },
+    "DTR": {
+      "min": 7.009431838989258,
+      "max": 29.329999923706055
+    },
+    "DEM": {
+      "min": 5.300535678863525,
+      "max": 2031.438232421875
+    },
+    "ELESD": {
+      "min": 0.7572253346443176,
+      "max": 269.61602783203125
+    },
+    "SLOPE": {
+      "min": 0.040908489376306534,
+      "max": 25.983858108520508
+    },
+    "modisLST": {
+      "min": 5.577746868133545,
+      "max": 39.332176208496094
+    },
+    "modisAngle": {
+      "min": -60.0,
+      "max": 60.0
+    },
+    "LAI": {
+      "min": 0.5883985161781311,
+      "max": 4.269052505493164
+    },
+    "EVI": {
+      "min": 0.13091836869716644,
+      "max": 0.6186339855194092
+    },
+    "GPP": {
+      "min": 0.014112119562923908,
+      "max": 0.07146642357110977
+    },
+    "NDWI": {
+      "min": -0.13312403857707977,
+      "max": 0.08001480996608734
+    }
+  },
+  "metadata": {
+    "surface_type": "MHVeg",
+    "sensor_type": "Aqua",
+    "area_mc": "highLAT",
+    "layer": 0,
+    "target_name": "deltaLST",
+    "target_definition": "deltaLST = correctedLST - modisLST",
+    "versions": {
+      "python": "3.13.0",
+      "lightgbm": "4.7.0",
+      "scikit_learn": "1.9.0",
+      "numpy": "2.5.1",
+      "joblib": "1.5.3"
+    },
+    "bundle_version": 1
+  },
+  "scope": "Clear-sky summer daytime; studied natural surfaces. Season is not encoded in the original bundle metadata."
+}

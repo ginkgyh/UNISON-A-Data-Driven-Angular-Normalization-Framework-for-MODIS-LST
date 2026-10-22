@@ -1,0 +1,132 @@
+{
+  "model_id": "Bare_Aqua",
+  "file": "model_bundle.pkl",
+  "sha256": "c2fecd2839521d39ac85fae8e452379b0c8cce38155466212bde467749b6baef",
+  "size_bytes": 2352167,
+  "feature_names": [
+    "LON",
+    "LAT",
+    "DSAT",
+    "DSR",
+    "DLR",
+    "DSOIL",
+    "DVSOIL",
+    "DTR",
+    "DEM",
+    "ELESD",
+    "SLOPE",
+    "modisLST",
+    "modisAngle"
+  ],
+  "feature_units": {
+    "LON": "degrees_east",
+    "LAT": "degrees_north",
+    "DSAT": "degC",
+    "DSR": "W_m-2",
+    "DLR": "W_m-2",
+    "DSOIL": "degC",
+    "DVSOIL": "m3_m-3",
+    "DTR": "K_temperature_difference",
+    "DEM": "m",
+    "ELESD": "m",
+    "SLOPE": "degrees",
+    "modisLST": "degC",
+    "modisAngle": "signed_degrees"
+  },
+  "temperature_input_unit": "celsius",
+  "target_unit": "K_temperature_difference",
+  "target_definition": "deltaLST = near_nadir_LST - observed_LST",
+  "normalization": "nadir_LST_C = modisLST + deltaLST_K; nadir_LST_K = nadir_LST_C + 273.15",
+  "input_scaler": "MinMaxScaler",
+  "target_scaler": "MinMaxScaler",
+  "model_parameters": {
+    "objective": "regression",
+    "metric": "rmse",
+    "learning_rate": 0.03,
+    "num_leaves": 31,
+    "max_depth": 8,
+    "min_data_in_leaf": 100,
+    "feature_fraction": 0.85,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l1": 0.1,
+    "lambda_l2": 1.0,
+    "seed": 0,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1,
+    "num_iterations": 2000
+  },
+  "num_trees": 2000,
+  "input_training_ranges": {
+    "LON": {
+      "min": -115.55685424804688,
+      "max": 171.3773651123047
+    },
+    "LAT": {
+      "min": -49.50946044921875,
+      "max": 48.608558654785156
+    },
+    "DSAT": {
+      "min": -0.3387523293495178,
+      "max": 43.87786865234375
+    },
+    "DSR": {
+      "min": 323.47857666015625,
+      "max": 1083.6746826171875
+    },
+    "DLR": {
+      "min": 230.4381561279297,
+      "max": 470.7998962402344
+    },
+    "DSOIL": {
+      "min": -7.548147678375244,
+      "max": 52.540103912353516
+    },
+    "DVSOIL": {
+      "min": 0.0,
+      "max": 0.18832945823669434
+    },
+    "DTR": {
+      "min": 6.6497392654418945,
+      "max": 52.524349212646484
+    },
+    "DEM": {
+      "min": -98.74981689453125,
+      "max": 5825.95361328125
+    },
+    "ELESD": {
+      "min": 0.014610720798373222,
+      "max": 488.00115966796875
+    },
+    "SLOPE": {
+      "min": 6.26152177574113e-05,
+      "max": 31.911800384521484
+    },
+    "modisLST": {
+      "min": -3.6050777435302734,
+      "max": 68.32709503173828
+    },
+    "modisAngle": {
+      "min": -60.0,
+      "max": 60.0
+    }
+  },
+  "metadata": {
+    "surface_type": "Bare",
+    "sensor_type": "Aqua",
+    "area_mc": "GA_lowLAT",
+    "layer": 16,
+    "target_name": "deltaLST",
+    "target_definition": "deltaLST = correctedLST - modisLST",
+    "versions": {
+      "python": "3.13.0",
+      "lightgbm": "4.7.0",
+      "scikit_learn": "1.9.0",
+      "numpy": "2.5.1",
+      "joblib": "1.5.3"
+    },
+    "bundle_version": 1
+  },
+  "scope": "Clear-sky summer daytime; studied natural surfaces. Season is not encoded in the original bundle metadata."
+}

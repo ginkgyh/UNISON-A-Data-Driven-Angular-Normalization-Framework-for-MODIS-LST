@@ -1,0 +1,47 @@
+{
+  "release_date": "2026-10-21",
+  "models": [
+    {
+      "model_id": "Bare_Terra",
+      "path": "models/Bare_Terra/model_bundle.pkl",
+      "manifest": "models/Bare_Terra/manifest.json",
+      "sha256": "0bc2553b49bcda4284fdc0a9ff5b3afcbf93e4fb7e5cfd84840b9fa2dd9e4f2d",
+      "feature_count": 14
+    },
+    {
+      "model_id": "Bare_Aqua",
+      "path": "models/Bare_Aqua/model_bundle.pkl",
+      "manifest": "models/Bare_Aqua/manifest.json",
+      "sha256": "c2fecd2839521d39ac85fae8e452379b0c8cce38155466212bde467749b6baef",
+      "feature_count": 13
+    },
+    {
+      "model_id": "MLVeg_Terra",
+      "path": "models/MLVeg_Terra/model_bundle.pkl",
+      "manifest": "models/MLVeg_Terra/manifest.json",
+      "sha256": "3054b0ecd569845d1245dc5ef6db5f1a24a88044c6d0e9c87fd142cff65d1f11",
+      "feature_count": 18
+    },
+    {
+      "model_id": "MLVeg_Aqua",
+      "path": "models/MLVeg_Aqua/model_bundle.pkl",
+      "manifest": "models/MLVeg_Aqua/manifest.json",
+      "sha256": "9f0990fdbb862f797df5d0d5b748af20616034b315e522ac2d6c5f816802e880",
+      "feature_count": 18
+    },
+    {
+      "model_id": "MHVeg_Terra",
+      "path": "models/MHVeg_Terra/model_bundle.pkl",
+      "manifest": "models/MHVeg_Terra/manifest.json",
+      "sha256": "91effd22ce369d35263a9e411e04944a24d27a5b196f5f7f4503114061bdfd57",
+      "feature_count": 17
+    },
+    {
+      "model_id": "MHVeg_Aqua",
+      "path": "models/MHVeg_Aqua/model_bundle.pkl",
+      "manifest": "models/MHVeg_Aqua/manifest.json",
+      "sha256": "79d442ba4f90442256c58189b35aead5a91e60fdf2c2ea9f83bbea29b024dd6f",
+      "feature_count": 17
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "status": "not_deployed",
+  "service": "Owner-hosted UNISON cloud inference",
+  "platform": "Google Cloud Gemini Enterprise Agent Platform / Vertex AI prediction API",
+  "notes": "Reserved online option. No endpoint has been published or verified. Use offline inference until the owner deploys and validates a matching model.",
+  "models": {
+    "Bare_Aqua": {
+      "status": "not_deployed",
+      "endpoint": null,
+      "code_url": null,
+      "feature_names": [
+        "LON",
+        "LAT",
+        "DSAT",
+        "DSR",
+        "DLR",
+        "DSOIL",
+        "DVSOIL",
+        "DTR",
+        "DEM",
+        "ELESD",
+        "SLOPE",
+        "modisLST",
+        "modisAngle"
+      ]
+    },
+    "Bare_Terra": {
+      "status": "not_deployed",
+      "endpoint": null,
+      "code_url": null,
+      "feature_names": [
+        "LON",
+        "LAT",
+        "DSAT",
+        "DSR",
+        "DLR",
+        "DSOIL",
+        "DVSOIL",
+        "NDWI",
+        "DTR",
+        "DEM",
+        "ELESD",
+        "SLOPE",
+        "modisLST",
+        "modisAngle"
+      ]
+    },
+    "MHVeg_Aqua": {
+      "status": "not_deployed",
+      "endpoint": null,
+      "code_url": null,
+      "feature_names": [
+        "LON",
+        "LAT",
+        "DSAT",
+        "DSR",
+        "DLR",
+        "DSOIL",
+        "DVSOIL",
+        "DTR",
+        "DEM",
+        "ELESD",
+        "SLOPE",
+        "modisLST",
+        "modisAngle",
+        "LAI",
+        "EVI",
+        "GPP",
+        "NDWI"
+      ]
+    },
+    "MHVeg_Terra": {
+      "status": "not_deployed",
+      "endpoint": null,
+      "code_url": null,
+      "feature_names": [
+        "LON",
+        "LAT",
+        "DSAT",
+        "DSR",
+        "DLR",
+        "DSOIL",
+        "DVSOIL",
+        "NDWI",
+        "DTR",
+        "DEM",
+        "ELESD",
+        "SLOPE",
+        "modisLST",
+        "modisAngle",
+        "LAI",
+        "EVI",
+        "GPP"
+      ]
+    },
+    "MLVeg_Aqua": {
+      "status": "not_deployed",
+      "endpoint": null,
+      "code_url": null,
+      "feature_names": [
+        "LON",
+        "LAT",
+        "DSAT",
+        "DSR",
+        "DLR",
+        "DSOIL",
+        "DVSOIL",
+        "DTR",
+        "DEM",
+        "ELESD",
+        "SLOPE",
+        "modisLST",
+        "modisAngle",
+        "LAI",
+        "EVI",
+        "TH",
+        "GPP",
+        "NDWI"
+      ]
+    },
+    "MLVeg_Terra": {
+      "status": "not_deployed",
+      "endpoint": null,
+      "code_url": null,
+      "feature_names": [
+        "LON",
+        "LAT",
+        "DSAT",
+        "DSR",
+        "DLR",
+        "DSOIL",
+        "DVSOIL",
+        "NDWI",
+        "DTR",
+        "DEM",
+        "ELESD",
+        "SLOPE",
+        "modisLST",
+        "modisAngle",
+        "LAI",
+        "EVI",
+        "TH",
+        "GPP"
+      ]
+    }
+  },
+  "input_contract": {
+    "temperature_features_degC": [
+      "DSAT",
+      "DSOIL",
+      "modisLST"
+    ],
+    "deltaLST_unit": "K (numerically equivalent to a degree Celsius difference)",
+    "correctedLST_unit": "degC",
+    "target_definition": "deltaLST = correctedLST - modisLST",
+    "preprocessing": "Raw physical predictor values; hosted wrapper applies the saved input scaler and inverse output scaler."
+  }
+}

@@ -1,0 +1,7 @@
+# Python 3.13; versions recorded in the author-provided bundles.
+joblib==1.5.3
+lightgbm==4.7.0
+numpy==2.5.1
+scikit-learn==1.9.0
+# CSV utilities and training helper.
+pandas==3.0.5
